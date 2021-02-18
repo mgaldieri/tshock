@@ -1,0 +1,15 @@
+version: '3'
+services:
+  server:
+    image: mgaldieri/tshock:4.4.0-pre11
+    container_name: tshock-server
+    tty: true
+    stdin_open: true
+    restart: on-failure
+    ports:
+      - '7777:7777'
+    volumes:
+      - './config:/config'
+      - './logs:/logs'
+      - './world:/world'
+      - './plugins:/plugins'
